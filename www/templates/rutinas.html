@@ -3,15 +3,18 @@
 
         <div ng-show="semaforo">
 	        <ion-list ng-repeat="rutine in rutines">
-	            <ion-item ng-click="abrirRutina(rutine)">{{rutine.nombre}}</ion-item>
+	            <ion-item ng-click="abrirRutina(rutine,$index)">{{rutine.nombre}} <i ng-if="$index%2==0"class="radio-icon ion-checkmark"></i></ion-item>
 	            
 	        </ion-list>
 		</div>
 		<div ng-hide="semaforo">
         <h2>{{rutina.nombre}}</h2>
 	        <ion-list ng-repeat="ejercicio in rutina.ejercicios">
-	            <ion-item ng-click="abrirRutina(rutine)">{{ejercicio.nombre}} repeticiones:{{ejercicio.reps}} realizadas:{{0}}</ion-item>
-	            
+	            <ion-item> {{ejercicio.nombre}} repeticiones: {{ejercicio.reps}} realizadas: {{0}}</ion-item>
+			             
+			    
+       				
+     			
 	        </ion-list>
 			
         </div>
