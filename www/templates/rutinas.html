@@ -1,11 +1,23 @@
-<ion-view title="Rutinas">
+<ion-view title="Rutinas" ng-controller="rutinasCtrl">
     <ion-content padding="true" class="has-header">
-        <ion-list></ion-list>
-        <ion-list></ion-list>
-        <ion-list>
-            <ion-item>Item 1</ion-item>
-            <ion-item>Item 2</ion-item>
-            <ion-item>Item 3</ion-item>
-        </ion-list>
+
+        <div ng-show="semaforo">
+	        <ion-list ng-repeat="rutine in rutines">
+	            <ion-item ng-click="abrirRutina(rutine)">{{rutine.nombre}}</ion-item>
+	            
+	        </ion-list>
+		</div>
+		<div ng-hide="semaforo">
+        <h2>{{rutina.nombre}}</h2>
+	        <ion-list ng-repeat="ejercicio in rutina.ejercicios">
+	            <ion-item ng-click="abrirRutina(rutine)">{{ejercicio.nombre}} repeticiones:{{ejercicio.reps}} realizadas:{{0}}</ion-item>
+	            
+	        </ion-list>
+			
+        </div>
+        <br>
+        <div class="col col-22 col-offset-11">
+        	<button class="button button-calm" ng-hide="semaforo" ng-click="verRutinas()">Mis Rutinas</button>
+        </div>
     </ion-content>
 </ion-view>

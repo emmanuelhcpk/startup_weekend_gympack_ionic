@@ -13,23 +13,16 @@ angular.module('app.routes', [])
     .state('inicioDeSesióN', {
       url: '/page1',
       templateUrl: 'templates/inicioDeSesióN.html',
-      controller: 'inicioDeSesióNCtrl'
+      controller: 'LoginController'
     })
-        
-      
-    
-      
+            
         
     .state('registro', {
       url: '/page2',
       templateUrl: 'templates/registro.html',
-      controller: 'registroCtrl'
+      controller: 'SignupController'
     })
-        
-      
-    
-      
-        
+
     .state('gymPack.rutinas', {
       url: '/page4',
       views: {
@@ -39,7 +32,15 @@ angular.module('app.routes', [])
         }
       }
     })
-        
+    .state('ver-rutina', {
+      url: '/page7',
+      views: {
+        'tab1': {
+          templateUrl: 'templates/rutina.html',
+          controller: 'rutinasCtrl'
+        }
+      }
+    }) 
       
     
       
@@ -63,7 +64,7 @@ angular.module('app.routes', [])
       views: {
         'tab3': {
           templateUrl: 'templates/establecimientos.html',
-          controller: 'establecimientosCtrl'
+          controller: 'GymController'
         }
       }
     })

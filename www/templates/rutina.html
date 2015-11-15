@@ -1,0 +1,9 @@
+<ion-view title="Rutina" ng-controller="rutinasCtrl">
+    <ion-content padding="true" class="has-header">
+        <h2>#{{rutina.nombre}}</h2>
+        <ion-list ng-repeat="ejercicio in rutina.ejercicios">
+            <ion-item ng-click="abrirRutina(rutine)">{{ejercicio.nombre}}--{{ejercicio.reps}}</ion-item>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>
